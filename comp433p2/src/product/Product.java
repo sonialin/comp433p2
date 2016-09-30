@@ -17,7 +17,8 @@ public class Product {
 	
 	public void getProductInfo(){
 		//TO DO
-		//mySQL operation
+		//mySQL operation 
+		//query "select * from product"
 	}
 	
 
