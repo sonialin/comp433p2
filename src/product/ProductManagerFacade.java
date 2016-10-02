@@ -4,12 +4,12 @@ import database.Databaseoperation;
 import order.Order;
 import partner.Partner;
 
-public class ProductManagerFacade {
+public class ProductManagerFacade extends Databaseoperation{
 	
 	Product product = null;
 	Order order;
 	Partner partner;
-	Databaseoperation dataoprt;
+	
 	
 	public ProductManagerFacade(Product product)
 	{
@@ -34,25 +34,25 @@ public class ProductManagerFacade {
 		String addquery = "INSERT INTO product VALUES (" + pID + "," + pname +","+ pdecription+ "," 
 		               + pprice+","+pownerID+","+pquantity+")";
 		
-		dataoprt.accessDatabase(addquery);
+		super.accessDatabase(addquery);
 	}
 	
 	public void deleteProduct(){
 		String deletequery = "DELETE FROM product WHERE productID = ?;";  // productID will get from keyboard input
-		dataoprt.accessDatabase(deletequery);
+		super.accessDatabase(deletequery);
 	}
 	
 	public void searchProduct(){
 		String searchquery = "SELECT ProductName, ProductDecription, ProductPrice FROM product where ProductName like "
 	                         + "'%?%'"+";";               //the search key words will get from keyboard input
 		
-		dataoprt.accessDatabase(searchquery);
+		super.accessDatabase(searchquery);
 	}
 	
 	public void checckAvailability(){
 		String checckavailabilityquery = "SELECT Productquantity FROM product where ProductName like "
                 + "'%?%'"+";";
-		dataoprt.accessDatabase(checckavailabilityquery);
+		super.accessDatabase(checckavailabilityquery);
 	}
 	
 	public void buyProduct(){
@@ -61,7 +61,7 @@ public class ProductManagerFacade {
 	
 	public void getProductOwner(){
 		String getownerquery = "SELECT ProductOwner_ProductOwnerID FROM product where ProductID=?;";
-		dataoprt.accessDatabase(getownerquery);
+		super.accessDatabase(getownerquery);
 	}
 
 }
