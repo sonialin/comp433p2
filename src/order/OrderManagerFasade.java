@@ -5,7 +5,7 @@ public class OrderManagerFasade {
 	Order order;
 	Product product;
 	
-	public OrderManagerFacade(Order order)
+	public OrderManagerFasade(Order order)
 	{
 		this.order = order;
 	}
