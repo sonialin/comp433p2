@@ -56,7 +56,7 @@ public class ProductManagerFacade extends Databaseoperation{
 	}
 	
 	public void buyProduct(){
-		order.submitOrder();  
+		//order.submitOrder();  
 	}
 	
 	public void getProductOwner(){

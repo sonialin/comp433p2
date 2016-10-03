@@ -17,12 +17,29 @@ public class Order {
 		this.amount=amount;
 	}
 	
-	public void getOrderInfo(){
-		//TO DO
+	public int getorderID(){
+		return orderID;
 	}
 	
-	public void setOrderInfo(){
-		//TO DO
+	public String getorderdate(){
+		return orderdate;
 	}
+	
+	public String getshipingaddress(){
+		return shipingaddress;
+	}
+	
+	public float gettotalprice(){
+		return totalprice;
+	}
+	
+	public float gettax(){
+		return tax;
+	}
+	
+	public double getamount(){
+		return amount;
+	}
+
 
 }

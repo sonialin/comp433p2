@@ -1,25 +1,44 @@
 package partner;
 
-public class PartnerManagerFasade {
+import database.Databaseoperation;
+import product.Product;
+
+public class PartnerManagerFasade extends Databaseoperation{
 	
 	Partner partner;
-	Product product;
+	Product product = null;
 	
-	public PartnerManagerFacade(Partner partner)
+	public void PartnerManagerFacade(Partner partner)
 	{
 		this.partner = partner;
 	}
 	
 	public void addPartner(){
-		//TO DO
+		partner = new Partner(0, null, null, null, null, null, null);
+		
+		int pID= partner.getpartnerID();
+		String pusername = partner.getpartnerusername();
+		String ppassword = partner.getpartnerpassword();
+		String ptype= partner.getpartnertype();
+		String pname= partner.getpartnername();
+		String paddress = partner.getpartneraddress();
+		String pphonenumber = partner.getpartnerphonenumber();
+		
+		String addquery = "INSERT INTO partner VALUES (" + pID + "," + pusername + "," + ppassword +","+ ptype+ "," 
+	               + pname+","+paddress+","+pphonenumber+")";
+	
+	super.accessDatabase(addquery);
+		
 	}
 
 	public void deletePartner(){
-		//TO DO
+		String deletequery = "DELETE FROM partner WHERE partnerID = ?;"; 
+		super.accessDatabase(deletequery);
 	}
 	
 	public void verifyPartner(){
-		//TO DO
+		String verifyquery = "SELECT PartnerName FROM partner where partnerID = ?;"; 
+		super.accessDatabase(verifyquery);
 	}
 	
 	public void notifyPartnersofsale(){
@@ -27,7 +46,7 @@ public class PartnerManagerFasade {
 	}
 	
 	public void addPartnerProducts(){
-		//TO DO
+         // productowner.addproduct();
 	}
 	
 	public void settleAccount(){

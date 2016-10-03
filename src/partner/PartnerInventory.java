@@ -1,5 +1,7 @@
 package partner;
 
+import product.Product;
+
 public class PartnerInventory {
 	
 	Product product;
