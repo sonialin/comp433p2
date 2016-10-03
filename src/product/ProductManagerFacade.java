@@ -13,6 +13,9 @@ public class ProductManagerFacade extends Databaseoperation{
 	Order order;
 	Partner partner;
 	
+	public ProductManagerFacade(){
+		super();
+	}
 	
 	public ProductManagerFacade(Product product)
 	{

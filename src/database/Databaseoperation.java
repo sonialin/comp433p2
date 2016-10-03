@@ -32,6 +32,11 @@ public class Databaseoperation {
 				System.out.println(rs.getString(3));
 				System.out.print("  ");
 				System.out.println(rs.getString(4));
+				System.out.print("  ");
+				System.out.println(rs.getString(5));
+				System.out.print("  ");
+				System.out.println(rs.getString(6));
+				
 			}
 			stmt.close();
 		} catch (SQLException e) {

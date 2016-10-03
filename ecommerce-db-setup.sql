@@ -79,7 +79,7 @@ VALUES (6, 'All-New Fire HD 8 Tablet, 8" HD Display, Wi-Fi, 16 GB - Includes Spe
 
 INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
 VALUES (7, 'Fire Kids Edition Tablet, 7" Display, Wi-Fi, 16 GB, Blue Kid-Proof Case', 
-99.99, 'Latest generation Fire Tablet. A full-featured 7" Fire tablet with a 1024 x 600 IPS display that\'s perfect for watching movies like Frozen, plus a fast quad-core processor that ensures quick app launch times and smooth games and video. The Fire Kids Edition tablet comes in black (with a blue, pink, or green Kid-Proof Case), 8 GB or 16 GB of internal storage, and up to 128 GB of expandable storage with microSD.', 
+99.99, 'Latest generation Fire Tablet. A full-featured 7" Fire tablet with a 1024 x 600 IPS display that is perfect for watching movies like Frozen, plus a fast quad-core processor that ensures quick app launch times and smooth games and video. The Fire Kids Edition tablet comes in black (with a blue, pink, or green Kid-Proof Case), 8 GB or 16 GB of internal storage, and up to 128 GB of expandable storage with microSD.', 
 1, 20);
 
 INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 

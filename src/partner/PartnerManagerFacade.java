@@ -3,12 +3,16 @@ package partner;
 import database.Databaseoperation;
 import product.Product;
 
-public class PartnerManagerFasade extends Databaseoperation{
+public class PartnerManagerFacade extends Databaseoperation{
 	
 	Partner partner;
 	Product product = null;
 	
-	public void PartnerManagerFacade(Partner partner)
+	public PartnerManagerFacade(){
+		super();
+	}
+	
+	public PartnerManagerFacade(Partner partner)
 	{
 		this.partner = partner;
 	}

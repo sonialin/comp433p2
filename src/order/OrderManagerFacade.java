@@ -3,12 +3,16 @@ package order;
 import product.Product;
 import database.Databaseoperation;
 
-public class OrderManagerFasade extends Databaseoperation{
+public class OrderManagerFacade extends Databaseoperation{
 	
 	Order order;
 	Product product = null;
 	
-	public OrderManagerFasade (Order order)
+	public OrderManagerFacade(){
+		super();
+	}
+	
+	public OrderManagerFacade (Order order)
 	{
 		this.order = order;
 	}
