@@ -4,6 +4,9 @@ import database.Databaseoperation;
 import order.Order;
 import partner.Partner;
 
+/**
+ * This class is managing the activities related to Product
+ */
 public class ProductManagerFacade extends Databaseoperation{
 	
 	Product product = null;
@@ -37,11 +40,17 @@ public class ProductManagerFacade extends Databaseoperation{
 		super.accessDatabase(addquery);
 	}
 	
+    /**
+     * deleteProduct
+     */
 	public void deleteProduct(){
 		String deletequery = "DELETE FROM product WHERE productID = ?;";  // productID will get from keyboard input
 		super.accessDatabase(deletequery);
 	}
 	
+    /**
+     * searchProduct
+     */	
 	public void searchProduct(){
 		String searchquery = "SELECT ProductName, ProductDecription, ProductPrice FROM product where ProductName like "
 	                         + "'%?%'"+";";               //the search key words will get from keyboard input
@@ -49,16 +58,25 @@ public class ProductManagerFacade extends Databaseoperation{
 		super.accessDatabase(searchquery);
 	}
 	
+    /**
+     * checckAvailability
+     */	
 	public void checckAvailability(){
 		String checckavailabilityquery = "SELECT Productquantity FROM product where ProductName like "
                 + "'%?%'"+";";
 		super.accessDatabase(checckavailabilityquery);
 	}
 	
+	/**
+     * buyproduct, that means submitorder
+     */
 	public void buyProduct(){
 		//order.submitOrder();  
 	}
 	
+	/**
+     * getProductOwner
+     */
 	public void getProductOwner(){
 		String getownerquery = "SELECT ProductOwner_ProductOwnerID FROM product where ProductID=?;";
 		super.accessDatabase(getownerquery);
