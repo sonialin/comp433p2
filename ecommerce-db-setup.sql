@@ -43,6 +43,61 @@ CREATE TABLE if not exists `Product` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+<<<<<<< HEAD
+=======
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (1, 'Kindle Paperwhite E-reader - Black, 6\" High-Resolution Display (300 ppi) with Built-in Light, Wi-Fi - Includes Special Offers', 
+119.99, 'Page Flip makes it easy to find pictures, charts, maps and even your notes and highlights from different parts of a book. While you swipe to other pages or zoom out to see page thumbnails, Page Flip automatically saves the page you’re reading, pinning it to the side of your screen so you’ll never lose your place.', 
+1, 10);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (2, 'Kindle Voyage E-reader, 6" High-Resolution Display (300 ppi) with Adaptive Built-in Light, PagePress Sensors, Wi-Fi - Includes Special Offers', 
+199.99, 'Kindle Voyage features a high-resolution 300 ppi display for crisp, laser quality text. The micro-etched glass screen is crafted to eliminate glare and feel like paper to the touch.', 
+1, 5);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (3, 'Fire Tablet, 7" Display, Wi-Fi, 8 GB - Includes Special Offers, Black', 
+49.99, 'The fast quad-core processor consists of four high-performance 1.3 GHz cores for quick app launches, smooth games and videos, and great overall performance.', 
+1, 20);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (4, 'Fire HD 6 Tablet, 6" HD Display, Wi-Fi, 8 GB - Includes Special Offers, Black', 
+69.99, 'Amazon engineers Fire HD tablets to hold up against everyday life. When tested against iPad mini 4 in tumble tests, Fire HD 6 proved 2x more durable.
+Real scenarios, real tablets. The scenarios in our latest commercial were shot in real time using our real tablets. The drop test happens so fast that we had to slow it down using a high speed camera to show the more than 3,300 Newtons of force at the moment of impact.', 
+1, 15);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (5, 'Fire HD 10 Tablet, 10.1" HD Display, Wi-Fi, 16 GB - Includes Special Offers, Silver Aluminum', 
+229.99, 'Fast and responsive. The fast quad-core processor consists of two high-performance 1.5 GHz cores and two 1.2 GHz cores running simultaneously for quick app launches, smooth games and videos, and great overall performance.', 
+1, 8);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (6, 'All-New Fire HD 8 Tablet, 8" HD Display, Wi-Fi, 16 GB - Includes Special Offers, Black', 
+89.99, 'Fast and responsive. Enjoy your entertainment with a fast 1.3 GHz quad-core processor. Fire HD 8 now delivers faster performance thanks to a 50% increase in RAM over the previous model.', 
+1, 12);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (7, 'Fire Kids Edition Tablet, 7" Display, Wi-Fi, 16 GB, Blue Kid-Proof Case', 
+99.99, 'Latest generation Fire Tablet. A full-featured 7" Fire tablet with a 1024 x 600 IPS display that is perfect for watching movies like Frozen, plus a fast quad-core processor that ensures quick app launch times and smooth games and video. The Fire Kids Edition tablet comes in black (with a blue, pink, or green Kid-Proof Case), 8 GB or 16 GB of internal storage, and up to 128 GB of expandable storage with microSD.', 
+1, 20);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (8, 'All-New Fire TV Stick with Alexa Voice Remote | Streaming Media Player', 
+39.99, 'Just plug Fire TV Stick into your HDTV and start streaming in minutes. Use the included Alexa Voice Remote to find the best way to watch across more than 90 channels and apps with universal search. With the fastest Wi-Fi and most accurate voice search of any streaming media stick, shows and movies start faster and stream smoother than ever.', 
+1, 20);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (9, 'Amazon Fire TV | Streaming Media Player', 
+99.99, 'Now with 4K Ultra HD
+Amazon Fire TV now brings you 4K Ultra HD streaming capability, giving you a best-in-class television experience with true-to-life picture quality when used with compatible 4K Ultra HD TVs—something Apple TV and Chromecast don’t support. Your 4K TV must support minimum HDCP requirements for protected content playback.', 
+1, 5);
+
+INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
+VALUES (10, 'Amazon Fire TV | Streaming Media Player', 
+109.99, 'The Amazon Fire TV + HD Antenna Bundle comes with three separate products: Amazon Fire TV, an AmazonBasics Ultra Thin Indoor HDTV Antenna, and an AmazonBasics HDMI Cable (6 feet). When you use these devices together, you can access great television shows and movies without cable. Fire TV lets you stream TV shows and movies from Amazon Video, Netflix, HBO NOW, and more, while the AmazonBasics HD Antenna receives free over-the-air HD local broadcast content from stations like ABC, CBS, NBC, and FOX.', 
+1, 8);
+
+>>>>>>> 19c75571e55a5d1488d71b0ff8cd90ad413cad8c
 CREATE TABLE if not exists `Customer` (
   `Username` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(45) NULL,
