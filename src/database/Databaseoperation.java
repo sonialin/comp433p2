@@ -52,7 +52,7 @@ public class Databaseoperation {
 				//System.out.print("  ");
 				//System.out.println(rs.getString(3));
 			//}
-		    
+		    rs.close();
 			stmt.close();
 		} catch (SQLException e) {
 			System.out.println(e.toString());
