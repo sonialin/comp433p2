@@ -7,5 +7,5 @@ The purpose of the app, as required for the project, is an ecommerce app that ha
 For project 2 submissions:
 -- Db-diagram.png which delineates the tables and the fields, and their relationships among each other
 -- ecommerce-db-setup.sql and ecommerce-db-populate.sql that include sql commands which creates the db, the tables, and populate the tables with some sample data entries.
--- UML diagram which outlines the domain model and the capacity of the app for later services exposure
+-- comp433p2_UML.pdf diagram which outlines the domain model and the capacity of the app for later services exposure
 -- An app that has the basic architecture laid out per the above two mentioned diagrams
