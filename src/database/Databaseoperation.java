@@ -2,6 +2,10 @@ package database;
 
 import java.sql.*;
 
+/**
+ * This class provides a method to access Mysql through JDBC
+ */
+
 import constant.Constant;
 
 public class Databaseoperation {
@@ -24,20 +28,31 @@ public class Databaseoperation {
 			System.out.println("MySQL Database connected!");
 			stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				System.out.print(rs.getString(1));
-				System.out.print("  ");
-				System.out.println(rs.getString(2));
-				System.out.print("  ");
-				System.out.println(rs.getString(3));
-				System.out.print("  ");
-				System.out.println(rs.getString(4));
-				System.out.print("  ");
-				System.out.println(rs.getString(5));
-				System.out.print("  ");
-				System.out.println(rs.getString(6));
-				
-			}
+			
+		    ResultSetMetaData rsmd = rs.getMetaData();  
+		    int columnCount = rsmd.getColumnCount();  
+		    // output column name
+		    for (int i=1; i<=columnCount; i++){  
+		        System.out.print(rsmd.getColumnName(i));  
+		        System.out.print("(" + rsmd.getColumnTypeName(i) + ")");  
+		        System.out.print(" | ");  
+		    }  
+		    System.out.println();  
+		    // output data
+		    while (rs.next()){  
+		        for (int i=1; i<=columnCount; i++){  
+		            System.out.print(rs.getObject(i) + " | ");  
+		        }  
+		        System.out.println();  
+		    }
+			//while (rs.next()) {
+				//System.out.print(rs.getString(1));
+				//System.out.print("  ");
+				//System.out.println(rs.getString(2));
+				//System.out.print("  ");
+				//System.out.println(rs.getString(3));
+			//}
+		    
 			stmt.close();
 		} catch (SQLException e) {
 			System.out.println(e.toString());
