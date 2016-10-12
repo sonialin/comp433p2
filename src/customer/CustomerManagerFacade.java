@@ -1,5 +1,11 @@
 package customer;
 
+import customer.Customer;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.Set;
+
 import database.Databaseoperation;
 import order.Order;
 
@@ -11,11 +17,20 @@ public class CustomerManagerFacade extends Databaseoperation{
 		super();
 	}
 	
-	public void addCustomer(){
+	public Set<Customer> getAllCustomers(){
+		// return all customers
+	}
+	
+	public Customer getCustomer(String username) {
+		// return customer by username
+	}
+	
+	public Customer addCustomer(String firstName, String lastName, String username){
 		//get sigh up information from web service and then insert record into database
 		//will complete in Project3
-	}	
-	public void deleteCustomer(){
+	}
+	
+	public void deleteCustomer(String username){
 		if(verifyCustomer())
 		{
 		String deletequery = "DELETE FROM product WHERE Customerusername = ?;";  // productID will get from keyboard input
