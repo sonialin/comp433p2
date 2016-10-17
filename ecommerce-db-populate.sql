@@ -56,14 +56,14 @@ VALUES (10, 'Amazon Fire TV | Streaming Media Player',
 INSERT INTO `ProductOwner` (`ProductOwnerID`, `ProductOwnerName`, `ProductOwnerType`) 
 VALUES (2, 'Samsung', 'Partner');
 
-INSERT INTO `Partner` (`PartnerID`, `PartnerName`, `PartnerType`, `Pasword`, `Username`, `Address`, `PhoneNumber`, `ProductOwner_ProductOwnerID`) VALUES (1, "Samsung", "Company", "123456", "samsung", "200 S Frontage Rd, Burr Ridge, IL 60527", "(630) 568-3072", 2);
+INSERT INTO `Partner` (`PartnerID`, `PartnerName`, `PartnerType`, `Pasword`, `Username`, `ProductOwner_ProductOwnerID`) VALUES (1, "Samsung", "Company", "123456", "samsung", 2);
 
 INSERT INTO `Product` (`ProductID`, `ProductName`, `ProductPrice`, `ProductDescription`, `ProductOwner_ProductOwnerID`, `ProductQuantity`) 
 VALUES (11, 'Samsung Galaxy J5 SM-J500H/DS GSM Factory Unlocked Smartphone, International Version (Gold)', 
 159.49, 'Samsung Galaxy J5 SM-J500H/DS GSM Factory Unlocked Smartphone, International Version (White) no Warranty 2G Bands: GSM 850/900/1800/1900 3G Bands: 850/900/1900/2100 5.0" Super AMOLED Capacitive Multi-Touchscreen w/ Protective Corning Gorilla Glass Android OS, v5.1 (Lollipop), Quad-core 1.2 GHz Adreno 306 Processor, Chipset: Qualcomm MSM8916 13MP Primary Camera autofocus LED flash, 5.0MP Front Camera LED flash 8GB Internal Memory, Dual Sim Card', 
 2, 10);
 
-INSERT INTO `Customer` (`Username`, `Password`, `Firstname`, `Lastname`, `Address`, `PhoneNumber`, `Email`) VALUES ('sonialin', '123456', 'Sonia', 'Lin', '1032 W Sheridan Rd, Chicago, IL 60660', '(773) 274-3000', 'jlin@luc.edu');
+INSERT INTO `Customer` (`Username`, `Password`, `Firstname`, `Lastname`, `Email`) VALUES ('sonialin', '123456', 'Sonia', 'Lin', 'jlin7@luc.edu');
 
 INSERT INTO `OrderStatus` (`StatusName`, `StatusID`) VALUES ('Paid', 1);
 INSERT INTO `OrderStatus` (`StatusName`, `StatusID`) VALUES ('Processed', 2);
@@ -73,8 +73,20 @@ INSERT INTO `OrderStatus` (`StatusName`, `StatusID`) VALUES ('Delivered', 4);
 INSERT INTO `Cart` (`CartID`, `CartPrice`, `Tax`) VALUES (1, 159.49, 9.97);
 INSERT INTO `CartLineItem` (`Cart_CartID`, `Product_ProductID`, `CartLineItemQuantity`, `CartLineItemPrice`) VALUES (1, 11, 1, 159.49);
 
-INSERT INTO `Order` (`OrderID`, `OrderPrice`, `Customer_Username`, `OrderDate`, `Shipping Address`, `OrderStatus_StatusID`, `Cart_CartID`) VALUES (1, 169.46, 'sonialin', 20160930, '1032 W Sheridan Rd, Chicago, IL 60660', 1, 1);
+INSERT INTO `Order` (`OrderID`, `OrderPrice`, `Customer_Username`, `OrderDate`, `OrderStatus_StatusID`, `Cart_CartID`) VALUES (1, 169.46, 'sonialin', 20160930, 1, 1);
 
-INSERT INTO `Payment` (`CardType`, `CardNumber`, `ExpirationDate`, `SecurityCode`, `BillingName`, `BillingAddress`, `Order_OrderID`) VALUES ('Visa', '1234223432344234', 20170501, 999, 'Sonia Lin', '1032 W Sheridan Rd, Chicago, IL 60660', 1);
+INSERT INTO `Payment` (`CardType`, `CardNumber`, `ExpirationDate`, `SecurityCode`, `BillingName`, `Order_OrderID`) VALUES ('Visa', '1234223432344234', 20170501, 999, 'Sonia Lin', 1);
 
 INSERT INTO `ProductReview` (`ProductReviewID`, `ProductReviewContent`, `Rating`, `ProductReviewDate`, `Product_ProductID`, `Customer_Username`) VALUES (1, 'Great phone and arrived on time.', 5, 20161001, 11, 'sonialin');
+
+INSERT INTO `ecommerce`.`Address` (`AddressID`, `StreetAddressLine1`, `StreetAddressLine2`, `City`, `State`, `Zipcode`, `Partner_PartnerID`, `Customer_Username`, `Order_OrderID`, `Payment_Order_OrderID`) VALUES (1, '200 S Frontage Rd', NULL, 'Burr Ridge', 'IL', '60527', 1, NULL, NULL, NULL);
+
+INSERT INTO `ecommerce`.`Address` (`AddressID`, `StreetAddressLine1`, `StreetAddressLine2`, `City`, `State`, `Zipcode`, `Partner_PartnerID`, `Customer_Username`, `Order_OrderID`, `Payment_Order_OrderID`) VALUES (2, '1032 W Sheridan Rd', NULL, 'Chicago', 'IL', '60660', NULL, 'sonialin', NULL, NULL);
+
+INSERT INTO `ecommerce`.`Address` (`AddressID`, `StreetAddressLine1`, `StreetAddressLine2`, `City`, `State`, `Zipcode`, `Partner_PartnerID`, `Customer_Username`, `Order_OrderID`, `Payment_Order_OrderID`) VALUES (3, '6655 N Sheridan Rd', NULL, 'Chicago', 'IL', '60626', NULL, NULL, 1, NULL);
+
+INSERT INTO `ecommerce`.`Address` (`AddressID`, `StreetAddressLine1`, `StreetAddressLine2`, `City`, `State`, `Zipcode`, `Partner_PartnerID`, `Customer_Username`, `Order_OrderID`, `Payment_Order_OrderID`) VALUES (4, '1032 W Sheridan Rd', NULL, 'Chicago', 'IL', '60660', NULL, NULL, NULL, 1);
+
+INSERT INTO `ecommerce`.`PhoneNumber` (`PhoneNumberID`, `AreaCode`, `Number`, `Partner_PartnerID`, `Customer_Username`) VALUES (1, '630', '5683072', 1, NULL);
+
+INSERT INTO `ecommerce`.`PhoneNumber` (`PhoneNumberID`, `AreaCode`, `Number`, `Partner_PartnerID`, `Customer_Username`) VALUES (2, '312', '9812123', NULL, 'sonialin');
